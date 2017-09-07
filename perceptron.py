@@ -1,4 +1,5 @@
 
+
 class Perceptron(object):
 
     def __init__(self, learning_rate):
@@ -37,6 +38,7 @@ def read_file(path):
 
     x_data = []
     y_data = []
+
     for line in file:
 
         x = line.split()
@@ -81,11 +83,21 @@ def main():
         print(object1.weights, object1.bias)
     check_validity_of_weights(x_test_data, y_test_data, object1)
 
-
 if __name__ == '__main__':
 
-    main()
+    #main()
+    x_test_data = [[3, 5]]
+    y_test_data = [0.0]
 
+    object1 = Perceptron(0.5)
+    check_validity_of_weights(x_test_data, y_test_data, object1)
+    print(object1.weights, object1.bias, object1)
+    for x, y in zip(x_test_data, y_test_data):
+
+        object1.train(x, y)
+
+    print(object1.weights, object1.bias, object1)
+    check_validity_of_weights(x_test_data, y_test_data, object1)
 
 
 

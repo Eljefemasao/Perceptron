@@ -69,8 +69,8 @@ def check_validity_of_weights(x_data, y_data, object1):
 
 def main():
 
-    x_training_data, y_training_data = read_file("/Users/masaaki/pythonPractice/training_data.txt")
-    x_test_data, y_test_data = read_file("/Users/masaaki/pythonPractice/test_data.txt")
+    x_training_data, y_training_data = read_file("/Users/masaaki/pythonPractice/Perceptron/training_data.txt")
+    x_test_data, y_test_data = read_file("/Users/masaaki/pythonPractice/Perceptron/test_data.txt")
 
     object1 = Perceptron(0.5)
     check_validity_of_weights(x_test_data, y_test_data, object1)

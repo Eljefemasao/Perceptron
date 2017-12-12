@@ -6,7 +6,8 @@ Today, it's more common to use other models of artificial neurons.
 
 
 ##Demo<br>
-Depending on input, the output is display as the result like the image below.
+Depending on input,the Output will be displayed as the result like the image below.
 ![result](https://github.com/Eljefemasao/Perceptron/blob/media/resource/proto.gif)
 </body>
+
 </html>

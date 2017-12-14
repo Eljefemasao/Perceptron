@@ -25,7 +25,7 @@ class Perceptron(object):
             
         update_bias = self.bias + self.lr*(y-prediction)
         self.bias = update_bias
-        
+
 
 def get_activation(z):
 
@@ -85,7 +85,7 @@ def main():
 
 if __name__ == '__main__':
 
-    #main()
+    main()
     x_test_data = [[3, 5]]
     y_test_data = [0.0]
 

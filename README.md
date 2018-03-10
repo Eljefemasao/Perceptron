@@ -1,12 +1,16 @@
 <html>
-<body>
+
+  <body>
 <h1>Perceptron</h1>
 Perceptron is a binary classifier that can learn from individual training instances. It was inspired by brain's function neurons. Today, it's more common to use other models of artificial neurons.
 
+<div>
 <p>Usage:</p>
+
 ```sh
 $ python3 perceptron.py
 ```
+</div>
 
 <h2>Files</h2>
 <ul>
@@ -26,6 +30,6 @@ $ python3 perceptron.py
 ##Demo<br>
 Depending on input,the Output will be displayed as the result like the image below.
 ![result](https://github.com/Eljefemasao/Perceptron/blob/media/resource/proto.gif)
-</body>
+  </body>
 
 </html>

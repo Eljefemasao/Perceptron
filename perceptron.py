@@ -3,13 +3,14 @@ import matplotlib.pyplot as plt
 import numpy as np
 import seaborn as sns
 import matplotlib.animation as animation
+import random
 
 
 class Perceptron(object):
 
     def __init__(self, learning_rate):
 
-        self.weights = [-2.3, -8.3]
+        self.weights = [1.3, 0.4]
         self.lr = learning_rate  # ordinary 0 < lr < 1
         self.bias = 1.0
 
@@ -17,7 +18,6 @@ class Perceptron(object):
         return self
 
     def __next__(self):
-
         return self.weights[0], self.weights[1]
 
     def prediction(self, input_x):
@@ -41,7 +41,7 @@ class Perceptron(object):
 
 def get_activation(z):
 
-    return int(z > 0) # return True=1 False=0
+    return int(z >= 0) # return True=1 False=0
 
 
 def read_file(path):
@@ -58,6 +58,7 @@ def read_file(path):
         teaching_label.append(float(x[2]))
 
     file.close()
+
     return input_x, teaching_label
 
 
@@ -82,8 +83,9 @@ def display_diagram(path, wvec):
     x_fig = np.arange(-5, 10, 0.1)
     fig = plt.figure(figsize=(6, 6), dpi=100)
     ims = []
-    plt.grid(color='gray')
-    plt.axis(xmin=-2, xmax=14, ymin=-2, ymax=11)
+    sns.set()
+    #plt.grid(color='gray')
+    plt.axis(xmin=-3, xmax=13, ymin=-3, ymax=10)
 
     # plot
     for w in wvec:
@@ -117,7 +119,7 @@ def main():
         weights.extend([weight1, weight2, object1.bias])
         wvec.append(np.array(weights))
 
-    display_diagram("./test_data.txt", wvec)
+    display_diagram("./training_data.txt", wvec)
     check_validity_of_weights(input_x_test_data, teaching_labels_test_data, object1)
 
 

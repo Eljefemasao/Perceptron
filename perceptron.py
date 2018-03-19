@@ -1,3 +1,4 @@
+
 import matplotlib.pyplot as plt
 import numpy as np
 import seaborn as sns
@@ -5,6 +6,9 @@ import matplotlib.animation as animation
 
 
 class Perceptron(object):
+    """
+    have Perceptron's function
+    """
 
     def __init__(self, learning_rate):
 
@@ -39,12 +43,20 @@ class Perceptron(object):
 
 
 def get_activation(z):
+    """
+    :param z:   z = (self.weights[0] * input_x[0] + self.weights[1] * input_x[1] + self.bias)
+    :return: True = 1, False = 1
 
-    return int(z >= 0) # return True=1 False=0
+    """
+    return int(z >= 0)
 
 
 def read_file(path):
-
+    """
+    get training data and test data
+    :param path:  path of training data and test data
+    :return:  list like [x_0,x_1] as input variable and list teaching label as 1 or 0.
+    """
     file = open(path, "r")
 
     input_x = []
@@ -62,6 +74,13 @@ def read_file(path):
 
 
 def check_validity_of_weights(input_x, teaching_label, object1):
+    """
+    calculate validity of trained weights
+    :param input_x:  list like [x_0,x_1]
+    :param teaching_label: list teaching label as 1 or 0.
+    :param object1:  Object of Perceptron
+    :return: validity of trained weights as percentage.
+    """
 
     total = 0
     for i in range(len(teaching_label)):
@@ -77,6 +96,13 @@ def check_validity_of_weights(input_x, teaching_label, object1):
 
 
 def display_diagram(path, wvec):
+    """
+    display process of training
+
+    :param path: path of training data for plot dots.
+    :param wvec: ndarray like np.array([x_0,x_1,bias],[.., .., ..],[...)
+    :return: diagram
+    """
 
     plot_data = np.loadtxt(path)
     x_fig = np.arange(-5, 10, 0.1)
@@ -106,7 +132,7 @@ def main():
     object1 = Perceptron(0.01)
     check_validity_of_weights(input_x_test_data, teaching_labels_test_data, object1)
 
-    # train
+    # training epoch
     epoch = 40
     for i in range(epoch):
         weights = []

@@ -103,7 +103,7 @@ def main():
     input_x_training_data, teaching_labels_training_data = read_file("./data/training_data.txt")
     input_x_test_data, teaching_labels_test_data = read_file("./data/test_data.txt")
 
-    object1 = Perceptron(0.5)
+    object1 = Perceptron(0.01)
     check_validity_of_weights(input_x_test_data, teaching_labels_test_data, object1)
 
     # train

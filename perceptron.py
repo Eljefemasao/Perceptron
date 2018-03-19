@@ -107,7 +107,7 @@ def main():
     check_validity_of_weights(input_x_test_data, teaching_labels_test_data, object1)
 
     # train
-    epoch = 30
+    epoch = 40
     for i in range(epoch):
         weights = []
         for input_x, teaching_label in zip(input_x_training_data, teaching_labels_training_data):

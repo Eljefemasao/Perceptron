@@ -8,7 +8,7 @@ class Perceptron(object):
 
     def __init__(self, learning_rate):
 
-        self.weights = [8, 0.4]
+        self.weights = [12.0, 4.2]
         self.lr = learning_rate  # ordinary 0 < lr < 1
         self.bias = 1.0
 
@@ -107,7 +107,7 @@ def main():
     check_validity_of_weights(input_x_test_data, teaching_labels_test_data, object1)
 
     # train
-    epoch = 20
+    epoch = 30
     for i in range(epoch):
         weights = []
         for input_x, teaching_label in zip(input_x_training_data, teaching_labels_training_data):
